@@ -11,16 +11,14 @@
 // 100 => 7
 
 // 10 => 1
-let counter = 0;
+// let counter = 0;
 function makanTerusRekursif(waktu) {
   // you can only write your code here!
   if (waktu <= 0) {
-    let total = counter;
-    counter = 0;
-    return total;
+    return 0;
   }
-  counter++;
-  return makanTerusRekursif(waktu - 15);
+  // counter++;
+  return 1 + makanTerusRekursif(waktu - 15);
 }
 
 // TEST CASES

@@ -1,4 +1,3 @@
-
 //   Vowels Counter Recursive
 
 //   Diberikan sebuah function consonantCounterRecursive(sentences) yang menerima satu parameter berupa
@@ -15,9 +14,12 @@
 //   - DILARANG menggunakan REGEX
 
 function consonantCounterRecursive(sentences) {
-
+  //   const vokal = ['a', 'b', 'c', 'd', 'e'];
+  //   for (let i = 0; i < vokal.length; i++) {
+  //     if(vokal[i] ===)
+  //   }
 }
 
-console.log(consonantCounterRecursive('alDi Suka MakAn baksO')) //13
-console.log(consonantCounterRecursive('AziZy')) // 3
-console.log(consonantCounterRecursive('awt6an')) // 3
+console.log(consonantCounterRecursive('alDi Suka MakAn baksO')); //13
+console.log(consonantCounterRecursive('AziZy')); // 3
+console.log(consonantCounterRecursive('awt6an')); // 3

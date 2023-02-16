@@ -26,14 +26,58 @@
 
 // algoritma:
 // 1. create a variable with the value of 0
-// 2. looping 
+// 2. looping
 // 3. count each traps and assign it to step 1
 
-
 function test(array) {
-
+  let getVillain = 0;
+  let trap = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (trap === 3) {
+      return `Ooops, you die. You got ${getVillain} villains`;
+    }
+    if (array[i] === '@') {
+      trap++;
+    }
+    if (array[i] === 'Villain') {
+      getVillain++;
+    }
+    if (array[i] === 'Medicine') {
+      trap--;
+    }
+  }
+  return `Nice work, detective! You got all villains: ${getVillain}`;
 }
 
 console.log(test(['*', '*', '@', '*', 'Villain', '*', '@', 'Villain'])); // 'Ooops, you die. You got 1 villains'
-console.log(test(['*', '*', '@', '*', 'Medicine', '@', 'Villain', '*', 'Villain', 'Villain', '@'])); // 'Ooops, you die. You got 3 villains'
-console.log(test(['*', '*', '@', '*', 'Medicine', '@', 'Medicine', 'Villain', '*', 'Villain', '@', 'Villain'])); // 'Nice work, detective! You got all villains: 3'
+console.log(
+  test([
+    '*',
+    '*',
+    '@',
+    '*',
+    'Medicine',
+    '@',
+    'Villain',
+    '*',
+    'Villain',
+    'Villain',
+    '@',
+  ])
+); // 'Ooops, you die. You got 3 villains'
+console.log(
+  test([
+    '*',
+    '*',
+    '@',
+    '*',
+    'Medicine',
+    '@',
+    'Medicine',
+    'Villain',
+    '*',
+    'Villain',
+    '@',
+    'Villain',
+  ])
+); // 'Nice work, detective! You got all villains: 3'

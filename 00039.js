@@ -24,20 +24,29 @@
 //   - WAJIB MENYERTAKAN ALGORITMA/PSEUDOCODE, jika tidak ada maka dianggap tidak mengerjakan
 //   - DILARANG MENGGUNAKAN BUILT IN FUNCTION .indexOf / .includes!
 
-//   PSEUDOCODE 
+//   PSEUDOCODE
 
 //   STORE "kamus" with the value of "abcdefghijklmnopqrstuvwxyz"
 //   STORE "H8BI" with the value of "!@#$%^&*()-+1234567890[]{}"
+const kamus = 'abcdefghijklmnopqrstuvwxyz'.split('');
+const H8BI = '!@#$%^&*()-+1234567890[]{}'.split('');
 
-//   FOR LOOP index 0 till length of input
-
-function encrypt(input) {
-
+const pseudocode = [];
+for (let i = 0; i < array.length; i++) {
+  const charPair = {
+    kamus: kamus[i],
+    H8BI: H8BI[i],
+  };
 }
 
-console.log(encrypt('dimitri')) // $(1(86(
-console.log(encrypt('irsyah mardiah')) //(67{!* 1!6$(!*
-console.log(encrypt('dimitr€€')) // $(1(86€€
-console.log(encrypt('d!mas')) // $!1!7
-console.log(encrypt('@wtian')) // @[8(!2
-  
+//   FOR LOOP index 0 till length of input
+function encrypt(input) {
+  const arr = input.split('');
+  arr.forEach((char) => {});
+}
+
+console.log(encrypt('dimitri')); // $(1(86(
+console.log(encrypt('irsyah mardiah')); //(67{!* 1!6$(!*
+console.log(encrypt('dimitr€€')); // $(1(86€€
+console.log(encrypt('d!mas')); // $!1!7
+console.log(encrypt('@wtian')); // @[8(!2

@@ -7,17 +7,13 @@
 // Contoh:
 
 // 512, berarti outputnya adalah 8, karena 5 + 1 + 2 = 8. 1542, berarti outputnya adalah 12, karena 1 + 5 + 4 + 2 = 12.
-let temp = 0;
+// let temp = 0;
 function totalDigitRekursif(angka) {
   // you can only write your code here!
   if (angka <= 0) {
-    let total = temp;
-    temp = 0;
-    return total;
+    return 0;
   }
-  temp += angka % 10;
-  // console.log('sisa angka: ' + angka / 10 + ', hasil: ' + temp);
-  return totalDigitRekursif(Math.floor(angka / 10));
+  return (angka % 10) + totalDigitRekursif(Math.floor(angka / 10));
 }
 
 // TEST CASES
@@ -26,4 +22,4 @@ console.log(totalDigitRekursif(1542)); // 12
 console.log(totalDigitRekursif(5)); // 5
 console.log(totalDigitRekursif(21)); // 3
 console.log(totalDigitRekursif(11111)); // 5
-console.log(totalDigitRekursif(123456789)); // 5
+console.log(totalDigitRekursif(123456789)); // 45
