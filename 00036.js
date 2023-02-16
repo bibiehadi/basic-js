@@ -1,8 +1,8 @@
 // Kali Terus (Rekursif)
 
-// Diberikan sebuah function kaliTerusRekursif(angka) yang menerima satu parameter berupa angka. 
-// Function akan memproses angka yang lebih dari satu digit menjadi satu digit dengan melakukan perkalian. 
-// Bila masih lebih dari satu digit, terus lakukan perkalian setiap digit-nya untuk pada akhirnya mendapatkan satu digit. 
+// Diberikan sebuah function kaliTerusRekursif(angka) yang menerima satu parameter berupa angka.
+// Function akan memproses angka yang lebih dari satu digit menjadi satu digit dengan melakukan perkalian.
+// Bila masih lebih dari satu digit, terus lakukan perkalian setiap digit-nya untuk pada akhirnya mendapatkan satu digit.
 // Wajib menggunakan rekursif untuk berlatih rekursif, namun kamu boleh menggunakan looping juga disini.
 
 // Contoh:
@@ -11,6 +11,16 @@
 
 function kaliTerusRekursif(angka) {
   // you can only write your code here!
+  if (angka <= 10) {
+    return angka;
+  }
+  let result = 1;
+  while (angka > 0) {
+    result *= angka % 10;
+    angka = Math.floor(angka / 10);
+  }
+  // console.log(result);
+  return kaliTerusRekursif(result);
 }
 
 // TEST CASES
