@@ -17,20 +17,44 @@
 // - tidak boleh menggunakan .map, .filter dan .reduce!
 
 const spells = [
-    { q: 3, w: 0, e: 0, spellName: 'Cold Snap' },
-    { q: 0, w: 2, e: 1, spellName: 'Alacrity' },
-    { q: 1, w: 0, e: 2, spellName: 'Forge Spirit' },
-    { q: 0, w: 0, e: 3, spellName: 'Sunstrike' },
-    { q: 1, w: 2, e: 0, spellName: 'Tornado' },
-    { q: 0, w: 3, e: 0, spellName: 'EMP' },
-    { q: 0, w: 1, e: 2, spellName: 'Chaos Meteor' },
-    { q: 1, w: 1, e: 1, spellName: 'Deafening Blast' },
-    { q: 2, w: 0, e: 1, spellName: 'Ice Wall' },
-    { q: 2, w: 1, e: 0, spellName: 'Ghost Walk' },
+  { q: 3, w: 0, e: 0, spellName: 'Cold Snap' },
+  { q: 0, w: 2, e: 1, spellName: 'Alacrity' },
+  { q: 1, w: 0, e: 2, spellName: 'Forge Spirit' },
+  { q: 0, w: 0, e: 3, spellName: 'Sunstrike' },
+  { q: 1, w: 2, e: 0, spellName: 'Tornado' },
+  { q: 0, w: 3, e: 0, spellName: 'EMP' },
+  { q: 0, w: 1, e: 2, spellName: 'Chaos Meteor' },
+  { q: 1, w: 1, e: 1, spellName: 'Deafening Blast' },
+  { q: 2, w: 0, e: 1, spellName: 'Ice Wall' },
+  { q: 2, w: 1, e: 0, spellName: 'Ghost Walk' },
 ];
 
-function invokeSpell (input) {
+function invokeSpell(input) {
+  //count qwe
+  const arr = input.split('');
+  let q = 0;
+  let w = 0;
+  let e = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 'q') {
+      q++;
+    } else if (arr[i] === 'w') {
+      w++;
+    } else if (arr[i] === 'e') {
+      e++;
+    } else {
+      return 'Combination does not exist';
+    }
+  }
+  let result = '';
 
+  spells.map((spell) => {
+    // console.log(spell.q === q && spell.w === w && spell.e === e);
+    if (spell.q === q && spell.w === w && spell.e === e) {
+      result = spell.spellName;
+    }
+  });
+  return result;
 }
 
 console.log(invokeSpell('qwe')); // Deafening Blast
@@ -41,4 +65,3 @@ console.log(invokeSpell('wwe')); // Alacrity
 console.log(invokeSpell('wew')); // Alacrity
 console.log(invokeSpell('wqa')); // Combination does not exist
 console.log(invokeSpell('qqe')); // Combination does not exist ----> ???
-  
