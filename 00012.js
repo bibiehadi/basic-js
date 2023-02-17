@@ -6,8 +6,7 @@
 
 function pasanganTerbesar(num) {
   // you can only write your code here!
-  const arr = String(num).match(/.{1, 3}/g) ?? [];
-  return arr;
+  return String(num).substring(2, 2);
 }
 
 // TEST CASES

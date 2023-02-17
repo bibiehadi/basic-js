@@ -9,6 +9,7 @@
 function angkaPalindrome(num) {
   // you can only write your code here!
   let isPalindrome = false;
+  if (num < 10) return ++num;
   while (!isPalindrome) {
     let arrNum = String(++num).split('');
     if (arrNum.length > 1) {

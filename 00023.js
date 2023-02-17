@@ -10,7 +10,11 @@ function ubahHuruf(kata) {
   const arr = kata.split('');
   let ads = [];
   for (let i = 0; i < arr.length; i++) {
-    ads.push(alphabet[alphabet.indexOf(arr[i]) + 1]);
+    for (let j = 0; j < alphabet.length; j++) {
+      if (arr[i] === alphabet[j]) {
+        ads.push(alphabet[j + 1]);
+      }
+    }
   }
   return ads.join('');
 }

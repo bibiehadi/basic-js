@@ -25,11 +25,37 @@
 // Data yang diharapkan merupakan akumulasi student yang lulus dan tidak dari setiap kelas.
 // Standard kelulusan adalah minimum 70.
 
-
 function getReport(studentGrades) {
-  // only code here..
-}
+  // only code here.
+  const classAPass = [];
+  const classBPass = [];
+  const classCPass = [];
 
+  const classAFail = [];
+  const classBFail = [];
+  const classCFail = [];
+  studentGrades.map((student) => {
+    if (student.classCode === 'A' && student.score >= 70) {
+      classAPass.push(student.name);
+    } else if (student.classCode === 'A' && student.score <= 70) {
+      classAFail.push(student.name);
+    } else if (student.classCode === 'B' && student.score >= 70) {
+      classBPass.push(student.name);
+    } else if (student.classCode === 'B' && student.score <= 70) {
+      classBFail.push(student.name);
+    } else if (student.classCode === 'C' && student.score >= 70) {
+      classCPass.push(student.name);
+    } else if (student.classCode === 'C' && student.score <= 70) {
+      classCFail.push(student.name);
+    }
+  });
+
+  return [
+    { classCode: 'A', passed: classAPass, failed: classAFail },
+    { classCode: 'B', passed: classBPass, failed: classBFail },
+    { classCode: 'C', passed: classCPass, failed: classCFail },
+  ];
+}
 
 var grades1 = [
   { name: 'John', score: 80, classCode: 'A' },

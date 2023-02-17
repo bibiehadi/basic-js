@@ -9,7 +9,7 @@ function balikKata(kata) {
   // you can only write your code here!
   const arr = kata.split('');
   const newKata = [];
-  for (let i = arr.length; i >= 0; i--) {
+  for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] !== undefined) newKata.push(arr[i]);
   }
   return newKata.join('');

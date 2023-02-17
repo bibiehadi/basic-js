@@ -9,6 +9,7 @@ function konversiMenit(menit) {
   let minutes = 0;
   hours = Math.floor(menit / 60);
   minutes = menit % 60;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
   return hours + ':' + minutes;
 }
 
